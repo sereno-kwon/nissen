@@ -1,15 +1,45 @@
 # 형식: <원본 URL> <저장 경로>   (한 줄에 하나, #으로 시작하는 줄은 무시)
-# 이 파일을 고쳐 main에 푸시하면 Actions(Fetch images)가 이미지를 받아 images/에 커밋합니다.
-# 후보 URL은 Actions → "List Nissen product images" 를 실행하면 .github/image-candidates.txt 로 생깁니다.
+# 이 파일을 고쳐 main에 푸시하면 Actions(Fetch images)가 이미지를 받아 images/에 커밋합니다 (이미 있는 파일은 건너뜀).
 #
-# 페이지가 쓰는 경로 (없으면 회색 NISSEN 자리로 보입니다)
-#   images/og.jpg                      공유 썸네일 2400x1200
-#   images/logo-512.png                검색용 로고
-#   images/hero/01~04.jpg              히어로 슬라이드 (브랜드, SP31, 스테인리스 아우터, 헤리티지)
-#   images/brand/01~09.jpg             브랜드 와이드컷(01), 카드 4장(02~05), 스토리(06,07), 쇼룸(08,09)
-#   images/sp31/01~02.jpg              SP31 제품컷, 디테일
-#   images/outer/01~03.jpg             스테인리스 아우터 제품컷, 장착컷, 컬러컷
-#   images/heritage/01~02.jpg          헤리티지 프렌치, 이탈리안
-#
-# 예)
-# https://cdn.shopify.com/s/files/....jpg?v=123&width=2400 images/sp31/01.jpg
+# 아래 이미지는 니센 본사 홈페이지(https://www.nissen-cable.jp/)의 원본을 받아
+# 긴 변 2400px 이하 JPEG로 줄여 images/에 직접 커밋했습니다. 출처 기록용입니다.
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ib3880c4e41753bdb/version/1472109269/image.jpg images/hero/01.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i89139df55e511915/version/1554877339/image.jpg images/hero/02.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i987f4031e0f755d1/version/1475200932/image.jpg images/hero/03.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i44b2e169d3efcd13/version/1475722305/image.jpg images/hero/04.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i4a48d802a9e503ce/version/1475200953/image.jpg images/brand/01.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i89f46efc3ef9b913/version/1554877414/image.jpg images/brand/02.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i867f852d5e7ce837/version/1554877234/image.png images/brand/03.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i78fc417373e92d08/version/1554877394/image.jpg images/brand/04.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i01153d69d71c4a72/version/1712033401/image.jpg images/brand/05.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i6d18633d52f39de6/version/1448944395/image.jpg images/brand/06.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/icfc5866964b016a9/version/1554877824/image.jpg images/brand/07.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/if30be9c299cca76d/version/1475722285/image.jpg images/brand/08.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i6751e489d98f838f/version/1556609781/image.jpg images/brand/09.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i81a6e6acb7b3d9dc/version/1556611939/image.jpg images/sp31/01.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i0432dd0e52e306f3/version/1556611944/image.jpg images/sp31/02.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i4399324be3625fac/version/1556611312/image.jpg images/outer/01.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i3df742ab38ab5a84/version/1770105048/image.png images/outer/02.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ib1e7c14047301d95/version/1556611379/image.jpg images/outer/03.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i49a48d84311f9388/version/1556611331/image.jpg images/colors/01.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i9b3b6ea4abef4486/version/1556611369/image.jpg images/colors/02.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ie28865f656b55e11/version/1556611338/image.jpg images/colors/03.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i9273a2e2fdb9bf52/version/1556611358/image.jpg images/colors/04.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i82229d8cf235edc4/version/1581463070/image.jpg images/colors/05.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ideadc83fbd2380d8/version/1556611324/image.jpg images/colors/06.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i16793e84fe288bb1/version/1556611397/image.jpg images/colors/07.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i2a4e15570a444173/version/1764139333/image.jpg images/colors/08.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ic2955a33d0007fc3/version/1634284611/image.jpg images/colors/j1.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i8e5cd2456f74fe1c/version/1634284633/image.jpg images/colors/j2.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ifbfea954b366c792/version/1634284616/image.jpg images/colors/j3.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i1c2cca587293f894/version/1634284637/image.jpg images/colors/j4.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/iaa344efe19d2aa45/version/1474619488/image.jpg images/vintage/01.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/id0dfc5a77da1157f/version/1474619514/image.jpg images/vintage/02.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i078889cbecde3cfc/version/1556609672/image.jpg images/vintage/03.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i121cac117d3d14db/version/1484810496/image.jpg images/vintage/04.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ifc1a6ba400ebf545/version/1475723391/image.jpg images/vintage/05.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ie10594931aab2822/version/1499927330/image.jpg images/vintage/c1.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i42f869cf606d36bd/version/1499927364/image.jpg images/vintage/c2.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i416d136a72e5b4bd/version/1499927488/image.jpg images/vintage/c3.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/i67b22bf14ee4bcd1/version/1499927419/image.jpg images/vintage/c4.jpg
+# https://image.jimcdn.com/app/cms/image/transf/none/path/s8d83cf9c103f647a/image/ib3880c4e41753bdb/version/1472109269/image.jpg images/og.jpg

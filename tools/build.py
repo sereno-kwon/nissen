@@ -20,14 +20,17 @@ SITE = 'https://nissen.rubiworkshop.com/'
 
 # ---------------------------------------------------------------- cable table
 # 케이블 가이드 표. 대표 사양이며 심웍스/니센 공식 자료 기준으로 검수 후 고칩니다.
-CABLE_HEAD = ['제품', '용도', '소재 · 구조', '규격', '길이']
+CABLE_HEAD = ['제품', '용도', '구조', '규격', '단위']
 CABLES = [
-    ('SP31 Inner Wire',        '브레이크 이너', 'SUS304 31가닥, 플라스마 도금', '1.5 ~ 1.6mm',        '2m'),
-    ('SP31 Inner Wire',        '변속 이너',     'SUS304 31가닥, 플라스마 도금', '1.1 ~ 1.2mm',        '2.3m'),
-    ('Stainless Outer',        '브레이크 아우터', '스테인리스 코일, PE 라이너',  '지름 5mm',          '2m · 3m'),
-    ('Stainless Outer',        '변속 아우터',   '스테인리스 코일, PE 라이너',  '지름 4mm',          '2m · 3m'),
-    ('Heritage Outer French',  '브레이크 아우터', '1950~1970 프렌치 복각',     '-',                 '3m'),
-    ('Heritage Outer Italian', '브레이크 아우터', '1950년대 이탈리안 복각, 메시 패턴', '-',          '3m'),
+    ('SP31 Special Stainless Inner', '브레이크 이너', '31가닥, 스릭 가공, 전착 코팅', '시마노 로드 · 캄파 로드 · MTB', '앞 1m · 뒤 2m · 롱 2.5m'),
+    ('SP31 Special Stainless Inner', '변속 이너',     '31가닥, 스릭 가공, 전착 코팅', '시마노 · 캄파',               '2.3m · 롱 3m'),
+    ('Stainless Inner',              '브레이크 이너', '19가닥, 스릭 가공',            '시마노 로드 · MTB',           '앞 1m · 뒤 2m'),
+    ('Stainless Outer',              '브레이크 아우터', '스테인리스 코일, PE 라이너',  '바깥지름 5mm (이너 1.5 / 1.6mm)', '2m'),
+    ('Stainless Outer · Ver.3',      '변속 아우터',   '스테인리스 코일, PE 라이너',    '바깥지름 4mm (이너 1.2mm)',     '2m'),
+    ('Stainless Outer Direct',       '브레이크 아우터', '굵은 코일, 좁은 간격',         '바깥지름 5mm',                 '2m'),
+    ('Premium Brake Cable Set',      '브레이크 세트', 'PTFE 라이너 아우터 + SP31',    '시마노 로드 · 캄파 로드 · MTB', '앞뒤 1세트'),
+    ('Vintage Outer',                '브레이크 아우터', '철제 환선 코일, PE 라이너',    '이탈리안 · 프렌치',             '2m'),
+    ('Ultra Light',                  '브레이크 아우터', '알루미늄 코일, 라이너',        '약 27g/m',                     '2m'),
 ]
 
 def cable_table():
