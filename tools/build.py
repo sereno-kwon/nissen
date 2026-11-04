@@ -1,4 +1,4 @@
-"""닛센 코리아(nissen.rubiworkshop.com) 사이트 빌드.
+"""니센 코리아(nissen.rubiworkshop.com) 사이트 빌드.
 
 index.src.html(한국어 원본)에서
   1) 케이블 가이드 표를 채워 index.html(한국어)을 만들고
@@ -19,7 +19,7 @@ from extract import HANGUL  # noqa: E402
 SITE = 'https://nissen.rubiworkshop.com/'
 
 # ---------------------------------------------------------------- cable table
-# 케이블 가이드 표. 대표 사양이며 심웍스/닛센 공식 자료 기준으로 검수 후 고칩니다.
+# 케이블 가이드 표. 대표 사양이며 심웍스/니센 공식 자료 기준으로 검수 후 고칩니다.
 CABLE_HEAD = ['제품', '용도', '소재 · 구조', '규격', '길이']
 CABLES = [
     ('SP31 Inner Wire',        '브레이크 이너', 'SUS304 31가닥, 플라스마 도금', '1.5 ~ 1.6mm',        '2m'),

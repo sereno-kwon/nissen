@@ -36,7 +36,7 @@ nissen.rubiworkshop.com 원페이지 정적 사이트 (GitHub Pages). quoc.rubiw
 ## 검수 필요
 - 브랜드 소개와 사양은 공개된 SimWorks by Nissen 자료와 판매처 정보(70년 가까운 역사, 직기 스프링에서 출발, SP31 SUS304 31가닥 워링턴·플라스마 도금, 아우터 지름 5mm/4mm, 16색, 헤리티지 프렌치·이탈리안)를 바탕으로 썼습니다. 공개 전에 수입 자료와 맞춰 확인합니다.
 - 샵 링크 `https://rubiworkshop.com/nissen` 가 실제 카테고리 주소인지 확인합니다.
-- 닛센 코리아 인스타그램 계정이 생기면 푸터 Links와 JSON-LD `sameAs`에 추가합니다.
+- 니센 코리아 인스타그램 계정이 생기면 푸터 Links와 JSON-LD `sameAs`에 추가합니다.
 
 ## 링크
 - 헤더 SHOP, 각 제품의 "루비워크샵에서 보기" 버튼: `https://rubiworkshop.com/nissen`
