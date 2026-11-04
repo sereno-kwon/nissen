@@ -32,6 +32,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
-          git add images
+          mkdir -p images
+          git add -A images
           git diff --cached --quiet && echo "no changes" || git commit -m "Add images"
           git push
