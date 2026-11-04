@@ -1,7 +1,7 @@
-"""벨로시티 코리아(nissen.rubiworkshop.com) 사이트 빌드.
+"""닛센 코리아(nissen.rubiworkshop.com) 사이트 빌드.
 
 index.src.html(한국어 원본)에서
-  1) 림 가이드 표를 채워 index.html(한국어)을 만들고
+  1) 케이블 가이드 표를 채워 index.html(한국어)을 만들고
   2) i18n/en.json, i18n/ja.json 번역으로 en/index.html, ja/index.html을 만들고
   3) sitemap.xml을 다시 씁니다.
 
@@ -18,25 +18,27 @@ from extract import HANGUL  # noqa: E402
 
 SITE = 'https://nissen.rubiworkshop.com/'
 
-# ---------------------------------------------------------------- rim table
-# 휠 빌드 섹션의 림 가이드 표. 대표 사양이며 공식 사이트(velocityusa.com) 기준으로 검수 후 고칩니다.
-RIM_HEAD = ['모델', '용도', '규격', '프로파일', '브레이크', '튜브리스']
-RIMS = [
-    ('A23',      '로드 · 랜도너',      '700C · 650B',       '외폭 23mm',      '림 · 디스크', '레디'),
-    ('Deep V',   '픽스드 기어 · 어반', '700C',              '높이 30mm, V 단면', '림',          '-'),
-    ('Dyad',     '투어링 · 탠덤',      '700C',              '더블월',          '림 · 디스크', '-'),
-    ('Blunt SS', '그래블 · MTB',       '700C(29) · 650B',   '와이드',          '디스크 전용', '레디'),
+# ---------------------------------------------------------------- cable table
+# 케이블 가이드 표. 대표 사양이며 심웍스/닛센 공식 자료 기준으로 검수 후 고칩니다.
+CABLE_HEAD = ['제품', '용도', '소재 · 구조', '규격', '길이']
+CABLES = [
+    ('SP31 Inner Wire',        '브레이크 이너', 'SUS304 31가닥, 플라스마 도금', '1.5 ~ 1.6mm',        '2m'),
+    ('SP31 Inner Wire',        '변속 이너',     'SUS304 31가닥, 플라스마 도금', '1.1 ~ 1.2mm',        '2.3m'),
+    ('Stainless Outer',        '브레이크 아우터', '스테인리스 코일, PE 라이너',  '지름 5mm',          '2m · 3m'),
+    ('Stainless Outer',        '변속 아우터',   '스테인리스 코일, PE 라이너',  '지름 4mm',          '2m · 3m'),
+    ('Heritage Outer French',  '브레이크 아우터', '1950~1970 프렌치 복각',     '-',                 '3m'),
+    ('Heritage Outer Italian', '브레이크 아우터', '1950년대 이탈리안 복각, 메시 패턴', '-',          '3m'),
 ]
 
-def rim_table():
-    h = '<table class="size rims"><thead><tr>' + ''.join(f'<th>{c}</th>' for c in RIM_HEAD) + '</tr></thead><tbody>'
-    for name, *vals in RIMS:
+def cable_table():
+    h = '<table class="size cables"><thead><tr>' + ''.join(f'<th>{c}</th>' for c in CABLE_HEAD) + '</tr></thead><tbody>'
+    for name, *vals in CABLES:
         h += f'<tr><th>{name}</th>' + ''.join(f'<td>{v}</td>' for v in vals) + '</tr>'
     return h + '</tbody></table>'
 
 def build_ko():
     s = (ROOT / 'index.src.html').read_text()
-    s = s.replace('{{RIM_TABLE}}', rim_table())
+    s = s.replace('{{CABLE_TABLE}}', cable_table())
     assert '{{' not in s
     assert '—' not in re.sub(r'<!--.*?-->', '', s, flags=re.S), 'em dash in Korean page'
     (ROOT / 'index.html').write_text(s)

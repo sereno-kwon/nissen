@@ -1,17 +1,15 @@
 # 형식: <원본 URL> <저장 경로>   (한 줄에 하나, #으로 시작하는 줄은 무시)
 # 이 파일을 고쳐 main에 푸시하면 Actions(Fetch images)가 이미지를 받아 images/에 커밋합니다.
-# 후보 URL은 Actions → "List Velocity product images" 를 실행하면 .github/image-candidates.txt 로 생깁니다.
+# 후보 URL은 Actions → "List Nissen product images" 를 실행하면 .github/image-candidates.txt 로 생깁니다.
 #
-# 페이지가 쓰는 경로 (없으면 회색 VELOCITY 자리로 보입니다)
+# 페이지가 쓰는 경로 (없으면 회색 NISSEN 자리로 보입니다)
 #   images/og.jpg                      공유 썸네일 2400x1200
 #   images/logo-512.png                검색용 로고
-#   images/hero/01~04.jpg              히어로 슬라이드 (브랜드, A23, Deep V, 투어링·그래블)
+#   images/hero/01~04.jpg              히어로 슬라이드 (브랜드, SP31, 스테인리스 아우터, 헤리티지)
 #   images/brand/01~09.jpg             브랜드 와이드컷(01), 카드 4장(02~05), 스토리(06,07), 쇼룸(08,09)
-#   images/a23/01~02.jpg               A23 제품컷, 라이딩컷
-#   images/deepv/01~03.jpg             Deep V 제품컷, 라이딩컷, 컬러컷
-#   images/dyad/01~02.jpg              Dyad 제품컷, 투어링컷
-#   images/blunt/01~02.jpg             Blunt SS 제품컷, 그래블컷
-#   images/build/01~02.jpg             루비워크샵 휠 빌드 (직접 촬영 권장)
+#   images/sp31/01~02.jpg              SP31 제품컷, 디테일
+#   images/outer/01~03.jpg             스테인리스 아우터 제품컷, 장착컷, 컬러컷
+#   images/heritage/01~02.jpg          헤리티지 프렌치, 이탈리안
 #
 # 예)
-# https://cdn.shopify.com/s/files/....jpg?v=123&width=2400 images/a23/01.jpg
+# https://cdn.shopify.com/s/files/....jpg?v=123&width=2400 images/sp31/01.jpg
