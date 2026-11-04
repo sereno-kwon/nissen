@@ -1,0 +1,40 @@
+name: List Velocity product images
+
+# Velocity 공식 스토어(velocityusa.com)의 상품 이미지 주소를 모아
+# .github/image-candidates.txt 로 커밋합니다. 여기서 쓸 이미지를 골라
+# image-manifest.txt 에 "<URL> images/<폴더>/<번호>.jpg" 형식으로 옮기면 됩니다.
+# Actions 탭에서 수동 실행(Run workflow)합니다.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect
+        run: |
+          set -e
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+          out=.github/image-candidates.txt
+          : > "$out"
+          page=1
+          while :; do
+            curl -fsSL -A "$UA" "https://velocityusa.com/products.json?limit=250&page=$page" -o p.json || { echo "products.json 을 받을 수 없습니다 (Shopify 스토어가 아닐 수 있음)"; break; }
+            n=$(jq '.products | length' p.json)
+            [ "$n" -eq 0 ] && break
+            jq -r '.products[] | .handle as $h | "# \($h) | \(.title)", (.images[] | "\(.src | if test("\\?") then . + "&width=2400" else . + "?width=2400" end) images/\($h)/\(.position).jpg"), ""' p.json >> "$out"
+            page=$((page+1))
+          done
+          rm -f p.json
+          echo "$(grep -c '^http' "$out" || true) images listed"
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add .github/image-candidates.txt
+          git diff --cached --quiet && echo "no changes" || git commit -m "List Velocity product image candidates"
+          git push
